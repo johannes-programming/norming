@@ -26,13 +26,19 @@
                             </dt>
                             <dd>
                                 <p> 
-                                    This class
+                                    The instances of this class are designed as decorators which in turn create new classes from functions. 
+                                    These new classes are created with the <code>*args</code> and <code>**kwargs</code> from the construction of the <code>Norming</code> decorator.
+                                    The <code>__new__</code> functions within the new classes pass their parameters to the function that was originally decorated.
+                                    The resulting return is in turn passed to the parental <code>__new__</code> function.
+                                    This setup is particularly useful for creating children of immutable classes with restricted freedom, 
+                                    e.g. named tuples of two integer values.
                                 </p>
                                 <dl class="heading4">
                                     <dt id="__call__">__call__(norm: Callable) -> type</dt>
                                     <dd>
                                         <p>
-                                            This magic method
+                                            This magic method implements the calling of the current instance. 
+                                            It is designed to function as a decorator for a function.
                                         </p>
                                     </dd>
                                 </dl>
