@@ -5,8 +5,8 @@ __all__ = ["test"]
 
 def test() -> unittest.TextTestRunner:
     "This function runs all the tests."
+    loader: unittest.TestLoader
+    suite: unittest.TestSuite
     loader = unittest.TestLoader()
-    tests = loader.discover(start_dir="norming.tests")
-    runner = unittest.TextTestRunner()
-    result = runner.run(tests)
-    return result
+    suite = loader.discover(start_dir="norming.tests")
+    return unittest.TextTestRunner().run(suite)

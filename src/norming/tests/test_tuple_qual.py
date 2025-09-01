@@ -1,21 +1,25 @@
 import unittest
+from types import FunctionType
+from typing import *
 
 from norming.core import Norming
+
+__all__ = ["TestQualnamePreservation"]
 
 # reconstruct normedtuple
 normedtuple = Norming(tuple)
 
 
 # Top-level norm function
-def top_level_norm(cls, x):
+def top_level_norm(cls: type, x: Any) -> tuple:
     "Top level norm function"
     return (x * 10,)
 
 
 class NormFunctionScopes:
 
-    def make_local_norm(self):
-        def local_norm(cls, x, y):
+    def make_local_norm(self: Self) -> FunctionType:
+        def local_norm(cls: Any, x: Any, y: Any) -> tuple:
             "Locally scoped norm"
             return (x - 1, y - 1)
 
@@ -24,13 +28,16 @@ class NormFunctionScopes:
 
 class TestQualnamePreservation(unittest.TestCase):
 
-    def test_top_level_function_qualname(self):
+    def test_top_level_function_qualname(self: Self) -> None:
+        Decorated: Any
         Decorated = normedtuple(top_level_norm)
         self.assertEqual(Decorated.__qualname__, top_level_norm.__qualname__)
         self.assertEqual(Decorated(2), (20,))
         self.assertTrue(Decorated.__qualname__.endswith("top_level_norm"))
 
-    def test_nested_function_qualname(self):
+    def test_nested_function_qualname(self: Self) -> None:
+        Decorated: Any
+        norm_func: Any
         norm_func = NormFunctionScopes().make_local_norm()
         Decorated = normedtuple(norm_func)
         self.assertEqual(Decorated.__qualname__, norm_func.__qualname__)
@@ -38,7 +45,9 @@ class TestQualnamePreservation(unittest.TestCase):
         self.assertIn("local_norm", Decorated.__qualname__)
         self.assertIn("make_local_norm.<locals>", Decorated.__qualname__)
 
-    def test_metadata_full_preservation(self):
+    def test_metadata_full_preservation(self: Self) -> None:
+        Decorated: Any
+        norm_func: Any
         norm_func = NormFunctionScopes().make_local_norm()
         Decorated = normedtuple(norm_func)
 
