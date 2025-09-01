@@ -9,7 +9,7 @@ authors = [
     { email = "johannes-programming@mailfence.com", name = "Johannes" },
 ]
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 2 - Pre-Alpha",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
@@ -24,7 +24,7 @@ keywords = []
 name = "norming"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "0.0.0.dev0"
+version = "0.0.1+local"
 
 [project.license]
 file = "LICENSE.txt"
@@ -33,3 +33,4 @@ file = "LICENSE.txt"
 Download = "https://pypi.org/project/norming/#files"
 Index = "https://pypi.org/project/norming/"
 Source = "https://github.com/johannes-programming/norming/"
+Website = "https://norming.johannes-programming.online/"
