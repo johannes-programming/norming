@@ -1,7 +1,7 @@
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
-    "setuptools>=61.0",
+    "setuptools>=61.0,<62",
 ]
 
 [project]
@@ -24,7 +24,7 @@ keywords = []
 name = "norming"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "0.1.0"
+version = "0.1.0+local"
 
 [project.license]
 file = "LICENSE.txt"
