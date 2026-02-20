@@ -5,7 +5,14 @@
     </head>
     <body>
         <dl class="heading0">
-            <dt><a>norming</a></dt>
+            <dt>
+                <a>norming</a>
+                <p>
+                    <select>
+                        <option selected>1.0</option>
+                    </select>
+                </p>
+            </dt>
             <dd>
                 <dl class="heading1">
                     <dt id="intro">Introduction</dt>
@@ -20,8 +27,8 @@
                     <dd id="installCorpus"></dd>
                     <dt id="features">Features</dt>
                     <dd>
-                        <dl class="heading4">
-                            <dt id="__new__">
+                        <dl class="heading4" version="1.0">
+                            <dt id="1--Norming">
                                 class Norming(*args: Any, **kwargs: Any)
                             </dt>
                             <dd>
@@ -34,7 +41,7 @@
                                     e.g. named tuples of two integer values.
                                 </p>
                                 <dl class="heading4">
-                                    <dt id="__call__">__call__(norm: Callable) -> type</dt>
+                                    <dt id="1--Norming.__call__">__call__(norm: Callable) -> type</dt>
                                     <dd>
                                         <p>
                                             This magic method implements the calling of the current instance. 
@@ -43,10 +50,10 @@
                                     </dd>
                                 </dl>
                             </dd>
+                            <dt id="1--test">norming.test()</dt>
+                            <dd class="testingCorpus"></dd>
                         </dl>
                     </dd>
-                    <dt id="testing">Testing</dt>
-                    <dd id="testingCorpus"></dd>
                     <dt id="license">License</dt>
                     <dd id="licenseCorpus"></dd>
                     <dt id="impressum">Impressum</dt>
@@ -55,13 +62,20 @@
             </dd>
         </dl>
     </body>
-    <script src="https://www.johannes-programming.online/script.js"></script>
-    <script>
-        setupLinksCorpus("norming");
-        setupInstallCorpus("norming");
-        setupTestingCorpus("norming");
-        setupLicenseCorpus("norming");
+    <script type="module">
+        import {
+            setupImpressumCorpus,
+            setupInstallCorpus,
+            setupLicenseCorpus,
+            setupLinksCorpus,
+            setupTestingCorpus,
+            addMetaAndLinkTags,
+        } from "https://www.johannes-programming.online/script.js";
         setupImpressumCorpus("norming");
+        setupInstallCorpus("norming");
+        setupLicenseCorpus("norming");
+        setupLinksCorpus("norming");
+        setupTestingCorpus("norming");
         addMetaAndLinkTags();
     </script>
 </html>
