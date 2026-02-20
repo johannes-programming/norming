@@ -1,7 +1,7 @@
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
-    "setuptools>=61.0,<62",
+    "setuptools>=64.0",
 ]
 
 [project]
@@ -9,7 +9,7 @@ authors = [
     { email = "johannes.programming@gmail.com", name = "Johannes" },
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
@@ -19,12 +19,12 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = []
-description = "norming"
+description = "This project allows for creating norming classes."
 keywords = []
 name = "norming"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "0.1.0+local"
+version = "1.0.3"
 
 [project.license]
 file = "LICENSE.txt"
