@@ -1,82 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <link rel="icon" type="image/svg+xml" href="https://www.johannes-programming.online/icon.svg">
+        <link rel="stylesheet" href="https://www.johannes-programming.online/versioning/styles.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>norming</title>
     </head>
     <body>
-        <dl class="heading0">
-            <dt>
-                <a>norming</a>
-                <p>
-                    Minor Version:
-                    <select>
-                        <option selected>1.0</option>
-                    </select>
-                </p>
-            </dt>
-            <dd>
-                <dl class="heading1">
-                    <dt id="intro">Introduction</dt>
-                    <dd id="introCorpus">
-                        <p>
-                            This project allows for creating norming classes.
-                        </p>
-                    </dd>
-                    <dt id="links">Links</dt>
-                    <dd id="linksCorpus"></dd>
-                    <dt id="install">Installation</dt>
-                    <dd id="installCorpus"></dd>
-                    <dt id="features">Features</dt>
-                    <dd>
-                        <dl class="heading4" version="1.0">
-                            <dt id="1--Norming">
-                                class Norming(*args: Any, **kwargs: Any)
-                            </dt>
-                            <dd>
-                                <p> 
-                                    The instances of this class are designed as decorators which in turn create new classes from functions. 
-                                    These new classes are created with the <code>*args</code> and <code>**kwargs</code> from the construction of the <code>Norming</code> decorator.
-                                    The <code>__new__</code> functions within the new classes pass their parameters to the function that was originally decorated.
-                                    The resulting return is in turn passed to the parental <code>__new__</code> function.
-                                    This setup is particularly useful for creating children of immutable classes with restricted freedom, 
-                                    e.g. named tuples of two integer values.
-                                </p>
-                                <dl class="heading4">
-                                    <dt id="1--Norming.__call__">__call__(norm: Callable) -> type</dt>
-                                    <dd>
-                                        <p>
-                                            This magic method implements the calling of the current instance. 
-                                            It is designed to function as a decorator for a function.
-                                        </p>
-                                    </dd>
-                                </dl>
-                            </dd>
-                            <dt id="1--test">norming.test()</dt>
-                            <dd class="testingCorpus"></dd>
-                        </dl>
-                    </dd>
-                    <dt id="license">License</dt>
-                    <dd id="licenseCorpus"></dd>
-                    <dt id="impressum">Impressum</dt>
-                    <dd id="impressumCorpus"></dd>
-                </dl>
-            </dd>
-        </dl>
+        <header>
+            <a href="https://norming.johannes-programming.online/">norming</a>
+            <p>
+                Minor Version:
+                <select id="version">
+                    <option selected>1.0</option>
+                </select>
+            </p>
+        </header>
+        <div id="rst"></div>
     </body>
-    <script type="module">
-        import {
-            setupImpressumCorpus,
-            setupInstallCorpus,
-            setupLicenseCorpus,
-            setupLinksCorpus,
-            setupTestingCorpus,
-            addMetaAndLinkTags,
-        } from "https://www.johannes-programming.online/main.js";
-        setupImpressumCorpus("norming");
-        setupInstallCorpus("norming");
-        setupLicenseCorpus("norming");
-        setupLinksCorpus("norming");
-        setupTestingCorpus("norming");
-        addMetaAndLinkTags();
-    </script>
+    <script type="module" src="https://www.johannes-programming.online/versioning/main.js"></script>
 </html>

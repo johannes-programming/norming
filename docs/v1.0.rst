@@ -1,0 +1,59 @@
+Introduction
+------------
+
+This project allows for creating norming classes.
+
+Links
+-----
+
+- Download: https://pypi.org/project/norming/#files
+- Index: https://pypi.org/project/norming/
+- Source: https://github.com/johannes-programming/norming/
+- Website: https://norming.johannes-programming.online/
+
+Installation
+------------
+
+To install norming, you can use pip. Open your terminal and run:
+
+.. code-block:: shell
+
+    pip install norming
+
+Features
+--------
+
+``class Norming(*args: Any, **kwargs: Any)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The instances of this class are designed as decorators which in turn create new classes from functions. These new classes are created with the *args and **kwargs from the construction of the Norming decorator. The __new__ functions within the new classes pass their parameters to the function that was originally decorated. The resulting return is in turn passed to the parental __new__ function. This setup is particularly useful for creating children of immutable classes with restricted freedom, e.g. named tuples of two integer values.
+
+``__call__(norm: Callable) -> type``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This magic method implements the calling of the current instance. It is designed to function as a decorator for a function.
+
+``norming.test()``
+~~~~~~~~~~~~~~~~~~
+
+This project can be tested through its test function.
+
+.. code-block:: python
+
+    import norming
+    norming.test()
+
+License
+-------
+
+This project is licensed under the MIT License.
+
+Impressum
+---------
+
+**Johannes Programming**
+
+- Name: Johannes
+- Email: johannes.programming@gmail.com
+- Homepage: https://www.johannes-programming.online/
+- Gravatar: https://www.johannes-programming.fyi/
