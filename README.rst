@@ -2,4 +2,6 @@
 norming
 =======
 
-Visit the website `https://norming.johannes-programming.online/ <https://norming.johannes-programming.online/>`_ for more information.
+Each minor version has its own documentation.
+These docs can be found as rst-files in the ``docs/`` directory of this project.
+They can also be viewed on the website `https://norming.johannes-programming.online/ <https://norming.johannes-programming.online/>`_.

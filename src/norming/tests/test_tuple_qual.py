@@ -1,13 +1,13 @@
 import unittest
-from types import FunctionType
-from typing import *
+from collections.abc import Callable
+from typing import Any, Self
 
-from norming.core import Norming
+from norming.core.Norming import Norming
 
 __all__ = ["TestQualnamePreservation"]
 
 # reconstruct normedtuple
-normedtuple = Norming(tuple)
+normedtuple: Any = Norming(tuple)
 
 
 # Top-level norm function
@@ -18,7 +18,9 @@ def top_level_norm(cls: type, x: Any) -> tuple:
 
 class NormFunctionScopes:
 
-    def make_local_norm(self: Self) -> FunctionType:
+    def make_local_norm(
+        self: Self,
+    ) -> Callable[[Any, Any, Any], tuple[Any, ...]]:
         def local_norm(cls: Any, x: Any, y: Any) -> tuple:
             "Locally scoped norm"
             return (x - 1, y - 1)

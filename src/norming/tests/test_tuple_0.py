@@ -1,8 +1,8 @@
 import inspect as ins
 import unittest
-from typing import *
+from typing import Any, Self
 
-from norming.core import Norming
+from norming.core.Norming import Norming
 
 __all__ = ["TestNormedTuple"]
 
@@ -40,12 +40,14 @@ class TestNormedTuple(unittest.TestCase):
         # Signature exposed on the class constructor (should exclude 'cls')
         params: list
         params = list(ins.signature(example_norm).parameters.values())
-        expected_public_sig: ins.Signature = ins.signature(example_norm)
-        expected_public_sig: ins.Signature = expected_public_sig.replace(
+        expected_public_sig: ins.Signature
+        expected_public_sig = ins.signature(example_norm)
+        expected_public_sig = expected_public_sig.replace(
             parameters=params[1:]
         )
         self.assertEqual(
-            ins.signature(ExampleTuple).parameters, expected_public_sig.parameters
+            ins.signature(ExampleTuple).parameters,
+            expected_public_sig.parameters,
         )
         self.assertEqual(ins.signature(ExampleTuple).return_annotation, Self)
         # Signature on __new__ (should match exactly, including 'cls')
@@ -53,7 +55,9 @@ class TestNormedTuple(unittest.TestCase):
             ins.signature(ExampleTuple.__new__).parameters,
             ins.signature(example_norm).parameters,
         )
-        self.assertEqual(ins.signature(ExampleTuple.__new__).return_annotation, Self)
+        self.assertEqual(
+            ins.signature(ExampleTuple.__new__).return_annotation, Self
+        )
 
 
 if __name__ == "__main__":
